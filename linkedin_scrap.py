@@ -35,4 +35,7 @@ def get_all_link_accs(fname_in, fname_out, MAX_TIME=20*60, a=10, b=10):
                 print(e)
                 sleep(a + b*random())
     
-    pd.DataFrame(data, columns=["Company", "Linkedin URL"]).sort_values(by="Company").to_csv("linkedin.csv")
+    pd.DataFrame(data, columns=["Company", "Linkedin URL"]).sort_values(by="Company").to_csv(fname_out)
+
+if __name__=="__main__":
+    get_all_link_accs("productoras.txt", "productoras.csv")
